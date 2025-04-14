@@ -13,11 +13,11 @@ import java.util.concurrent.TimeUnit;
 *   A refill rate (tokens per second)
 * Implement a method:
 *   boolean allowRequest(String userId) — returns true if the request is allowed for the given user.
-*   Simulate multiple users making requests concurrently.
+*   Simulate multiple users making requests concurrently using Token Bucket.
 *
 * Follow up : Add a credit system to carry forward unused tokens
 * */
-public class UserRateLimiterUsingTokenBucket {
+public class UserRateLimiter_TokenBucket {
     /*
     * Token Bucket algorithm works as follows:
     * User wise buckets are created and each bucket has a capacity to hold tokens
@@ -67,7 +67,7 @@ public class UserRateLimiterUsingTokenBucket {
     }
     private final ConcurrentHashMap<String, TokenBucket> userBuckets;
 
-    public UserRateLimiterUsingTokenBucket() {
+    public UserRateLimiter_TokenBucket() {
         userBuckets = new ConcurrentHashMap<>();
     }
 
@@ -81,7 +81,7 @@ public class UserRateLimiterUsingTokenBucket {
     }
 
     public static void main(String[] args) {
-        UserRateLimiterUsingTokenBucket rateLimiter = new UserRateLimiterUsingTokenBucket();
+        UserRateLimiter_TokenBucket rateLimiter = new UserRateLimiter_TokenBucket();
         rateLimiter.registerUser("userA",5,1, 2); //5 tokens, 1 token/sec
         rateLimiter.registerUser("userB",3,2, 2); //3 tokens, 2 tokens/sec
 
