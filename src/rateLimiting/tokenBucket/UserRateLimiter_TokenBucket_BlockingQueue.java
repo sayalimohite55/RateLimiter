@@ -1,4 +1,4 @@
-package rateLimiting;
+package rateLimiting.tokenBucket;
 
 import java.util.concurrent.*;
 
