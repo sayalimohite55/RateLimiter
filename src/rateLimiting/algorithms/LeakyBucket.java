@@ -54,7 +54,7 @@ public class LeakyBucket {
         //Simulate Requests
         for(int i=0;i<10; i++) {
             if(leakyBucket.allowRequest(new Request(i, "User"))) {
-                System.out.println("Request : "+(i + 1)+" is allowed in token bucket");
+                System.out.println("Request : "+(i + 1)+" is allowed in Leaky bucket");
             } else {
                 System.out.println("Request " + (i + 1) + " denied");
             }
